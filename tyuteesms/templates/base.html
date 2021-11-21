@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block titleblock%}
+        {%endblock %}
+        <link  rel ='stylesheet' href="{% static 'sample.css' %}">
+    </head>
+    <body>
+        <h1>this is header form base </h1>
+        {% block block1%}
+        {%endblock%}
+        {%block block2%}
+        {%endblock%}
+        <h2>this is fooder from base </h2>
+    </body>
+</html>

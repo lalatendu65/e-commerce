@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Actor from</title>
+</head>
+    <h2>fill out the form below and click "calculate" to calculate</h2>
+    <form action="http://127.0.0.1:8000/actd/" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="n1">actname:</label>
+            <input type='text'id='n1' name="name"><br>
+        </div>
+        <div>
+            <label for="n2">gender:</label>
+            <input type='text'id='n2' name="gen"><br>
+        </div>
+        <div>
+            <label for="n3">location:</label>
+            <input type='text'id='n3' name="loc"><br>
+        </div>
+        <div>
+            <label for="n4">movie count:</label>
+            <input type='text'id='n4' name="nom"><br>
+        </div>
+        
+
+        <input type="submit" value="save">
+    </form> 
+</body>
+</html>

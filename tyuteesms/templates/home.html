@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%block titleblock%}
+<title>home</title>
+{%endblock%}
+{%block block1%}
+        
+        <a href="http://127.0.0.1:8000/viewall">viewall</a>
+        <form action="http://127.0.0.1:8000/viewbyloc/">
+        
+        <div>
+            <label for="n1">movies</label>
+            <input type='text'id='1' name="movies"><br>
+        </div>
+        <input type="submit" value="search">
+        </form>
+   {%endblock%}

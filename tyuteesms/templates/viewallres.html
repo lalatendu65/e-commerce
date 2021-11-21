@@ -1,0 +1,33 @@
+
+{%extends 'base.html'%}
+{%block titleblock%}
+<title>viewall</title>
+{%endblock%}
+{%block block1%}
+<h1>Actor information</h1>
+    <table border="2">
+        {% if actors %}
+        <tr>
+            <th>Actor id</th>
+            <th>Actor name</th>
+            <th> gender</th>
+            <th>location</th>
+            <th>movies</th>
+        </tr>
+        {% for actor in actors %}
+        <tr>
+            <td>{{actor.id}}</td>
+            <td>{{actor.name}}</td>
+            <td>{{actor.gender}}</td>
+            <td>{{actor.location}}</td>
+            <td>{{actor.movies}}</td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+    {%else%}
+    <h2>no actor record in table </h2>
+    {%endif%}
+    <a href="http://127.0.0.1:8000/">home</a>
+    {%endblock%}

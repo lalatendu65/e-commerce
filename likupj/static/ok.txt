@@ -1,0 +1,1 @@
+this is my shop where i can put all my static files 

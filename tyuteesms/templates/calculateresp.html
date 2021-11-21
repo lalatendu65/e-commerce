@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> calculate</title>
+</head>
+    <h2>fill out the form below and click "calculate" to calculate</h2>
+    <form action="http://127.0.0.1:8000/cal/" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="n1">Number1:</label>
+            <input type='text'id='n1' name="n1"><br>
+        </div>
+        <div>
+            <label for="n2">Number2:</label>
+            <input type='text'id='n2' name="n2"><br>
+        </div>
+        <input type="submit" value="calculate">
+    </form> 
+</body>
+</html>
