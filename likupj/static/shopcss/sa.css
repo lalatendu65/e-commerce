@@ -8,8 +8,9 @@
 }
 
 .col-md-3 img {
-  width: 157px;
+  width: 100%;
   height: 155px;
+  object-fit: contain;
 }
 
 body .carousel-indicator li {

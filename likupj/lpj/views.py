@@ -22,7 +22,7 @@ def index(request):
     nslides=n//4 + ceil((n/4)-(n//4))
     #params={'no_slides':nslides,'range':range(1,nslides),'product':products}
     allprods=[[products,range(1,nslides),nslides],[products,range(1,nslides),nslides] ]
-    params={'allprod':allprods}
+    params={'allprods':allprods}
 
     return render (request,'index.html',params)
 
