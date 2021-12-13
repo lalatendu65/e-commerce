@@ -3,6 +3,7 @@ from django.http import request
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from lpj.models import *
+from math import ceil
 
 # Create your views here.
 def test(request):
@@ -15,12 +16,18 @@ def welcome(request):
     return render(request,'respone.html',{'kcon':con})
 
 def index(request):
-    allproduct=product.objects.all()
+    products=product.objects.all()
+    print(products)
+    n=len(products)
+    nslides=n//4 + ceil((n/4)-(n//4))
+    #params={'no_slides':nslides,'range':range(1,nslides),'product':products}
+    allprods=[[products,range(1,nslides),nslides],[products,range(1,nslides),nslides] ]
+    params={'allprod':allprods}
 
-    return render (request,'index.html',{'all':allproduct})
+    return render (request,'index.html',params)
 
 def about(request):
-    return HttpResponse('we are at about')
+    return render(request,'about.html')
 def contact(request):
     return HttpResponse('we are at contact')
 def tracker(request):

@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <h1>Django login page</h1>
+        <form action="{% url 'log' %}" method="POST">
+            {% csrf_token %}
+            <label for="username">User Name : </label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="pwd">Password  </label>
+            <input type="text" id="pwd" class="m" name="pwd"><br><br>
+            <input type="submit"></input>
+        </form>
+           {% for message in messages %}
+           <h3 class="{{message.tag}}">{{message}}</h3>
+           {% endfor %}
+    </body>
+</html>

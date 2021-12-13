@@ -60,3 +60,39 @@ def welcome(request):
     
     
     return render(request,'response.html',{'kcontext':context})
+def setcookies(request):
+   hresponse=render(request,'setcookies.html')
+   hresponse.set_cookie('name','India')
+   hresponse.set_cookie('sal',100000.34,max_age=86400)
+   return hresponse
+def getcookies(request):
+   c1=request.COOKIES.get('name','guest')
+   c2=request.COOKIES.get('sal',0)
+   return render(request,'getcookies.html',{'c1':c1,'c2':c2})
+
+
+def delcookies(request):
+   hresponse=render(request,'delcookies.html')
+   hresponse.delete_cookie('name')
+   hresponse.delete_cookie('sal')
+   return hresponse
+
+def setsession(request):
+   request.session['sname']='liku'
+   request.session['ssal']=150000.23
+   request.session['age']=25
+   request.session.set_expiry(2*24*60*60)
+   return render(request,'setsession.html')
+
+
+def getsession(request):
+   c1=request.session.get('sname')
+   c2=request.session.get('ssal')
+   sessiondata={'data1':c1,'data2':c2,'expdate':request.session.get_expiry_date(),'expage':request.session.get_expiry_age()}
+   return render (request,'getsession.html',{'data':sessiondata})
+
+def delsession(request):
+   if 'ssal' in request.session:
+      del request.session['ssal']
+   request.session.flush()
+   return render(request,'delsession.html')
